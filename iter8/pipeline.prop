@@ -1,0 +1,5 @@
+port: 80
+ip: YOUR-ISTIO-INGRESS-GATEWAY-HERE
+app-path: demo
+load-duration: 600
+load-frequency: 0.1

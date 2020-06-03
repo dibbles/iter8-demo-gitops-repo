@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iter8-demo-v100
+  labels:
+    app: demo
+    version: v100
+spec:
+  selector:
+    matchLabels:
+      app: demo
+  template:
+    metadata:
+      annotations:
+        sidecar.istio.io/inject: "true"
+      labels:
+        app: demo
+        version: v100
+    spec:
+      containers:
+      - name: demo
+        image: dibbles/iter8-demo:v100
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
+
